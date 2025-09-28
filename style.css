@@ -1,0 +1,69 @@
+:root{
+  --bg:#fafafa; --card:#ffffff; --accent:#b71c1c; --muted:#6b7280; --ink:#0b1220;
+  --wrap:1100px;
+}
+*{box-sizing:border-box}
+body{font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial; margin:0; color:var(--ink); background:var(--bg)}
+.wrap{max-width:var(--wrap); margin:0 auto; padding:0 20px}
+.site-header{background:#111; color:white}
+.header-inner{display:flex; align-items:center; justify-content:space-between; padding:18px 0}
+.brand .logo{font-weight:800; font-size:1.25rem; color:white; text-decoration:none}
+.brand .dot{color:var(--accent); margin-left:6px}
+.tagline{font-size:0.85rem; color:#d1d5db; margin-top:4px}
+.top-nav a{color:#d1d5db; margin-left:18px; text-decoration:none; font-size:0.95rem}
+.top-nav .shop-link{background:var(--accent); color:white; padding:6px 10px; border-radius:6px; margin-left:14px; text-decoration:none}
+
+/* Hero */
+.hero{display:flex; gap:28px; align-items:center; padding:34px 0}
+.hero-left{flex:1}
+.hero-left h1{font-size:2.2rem; margin:0 0 8px}
+.lead{color:var(--muted); margin-bottom:16px}
+.search-form{display:flex; gap:8px; margin-bottom:10px}
+.search-form input{flex:1; padding:12px 14px; border-radius:8px; border:1px solid #e6e6e6}
+.search-form button{background:var(--accent); color:white; border:none; padding:12px 16px; border-radius:8px; cursor:pointer}
+.small-note{color:var(--muted); font-size:0.9rem}
+
+/* hero image */
+.hero-right img{width:100%; max-width:520px; border-radius:10px; box-shadow:0 10px 30px rgba(2,6,23,0.08)}
+
+/* Sections */
+.section{padding:28px 0}
+.section-header{display:flex; align-items:center; justify-content:space-between}
+.muted{color:var(--muted)}
+
+/* Carousel */
+.carousel{position:relative; display:flex; align-items:center; gap:12px; margin-top:12px}
+.carousel-track{display:flex; gap:12px; overflow:hidden; scroll-behavior:smooth}
+.slide{min-width:300px; background:var(--card); border-radius:10px; padding:8px; box-shadow:0 8px 22px rgba(2,6,23,0.06); display:flex; flex-direction:column; align-items:center}
+.slide img{width:100%; height:260px; object-fit:cover; border-radius:6px}
+.slide-caption{padding:10px; text-align:center}
+.carousel-btn{background:rgba(0,0,0,0.6); color:white; border:none; font-size:20px; padding:6px 12px; border-radius:6px; cursor:pointer}
+
+/* Grid */
+.grid{display:grid; gap:16px; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); margin-top:18px}
+.card{background:var(--card); border-radius:10px; overflow:hidden; box-shadow:0 8px 20px rgba(2,6,23,0.06); display:flex; flex-direction:column}
+.card img{width:100%; height:240px; object-fit:cover}
+.card-body{padding:12px}
+.card-body h3{margin:0 0 6px; font-size:1.05rem}
+.meta{color:var(--muted); font-size:0.9rem; margin-bottom:10px}
+.btn{display:inline-block; background:var(--accent); color:white; padding:8px 12px; border-radius:8px; text-decoration:none}
+
+/* Genres chips */
+.genres{display:flex; gap:8px; flex-wrap:wrap}
+.chip{background:white; padding:8px 12px; border-radius:999px; border:1px solid #eee; text-decoration:none; color:var(--ink)}
+
+/* Footer */
+.site-footer{background:#0b1220; color:#cbd5e1; padding:28px 0 12px}
+.footer-inner{display:flex; gap:20px; justify-content:space-between; flex-wrap:wrap}
+.foot-col h4{margin:0 0 8px}
+.foot-col ul{list-style:none; padding:0; margin:0}
+.foot-col a{color:#cbd5e1; text-decoration:none}
+.socials a{display:inline-block; margin-right:10px; color:#cbd5e1}
+
+/* small screens */
+@media (max-width:880px){
+  .header-inner{flex-direction:column; align-items:flex-start; gap:8px}
+  .hero{flex-direction:column}
+  .hero-right img{max-width:100%}
+  .footer-inner{flex-direction:column}
+}

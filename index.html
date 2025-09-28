@@ -1,33 +1,167 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Monument Vinyl Records</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header>
-    <h1>Monument Vinyl Records</h1>
-    <p>Rare • Classic • Collectible Vinyl</p>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="socials.html">Social Feed</a>
-      <a href="https://www.ebay.com/str/monumentvinylrecords" target="_blank">Shop eBay</a>
-    </nav>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <div class="brand">
+        <a href="/" class="logo">Monument<span class="dot">Vinyl</span></a>
+        <p class="tagline">Rare • Classic • Collectible</p>
+      </div>
+      <nav class="top-nav">
+        <a href="#featured">Featured</a>
+        <a href="#new">New</a>
+        <a href="#genres">Genres</a>
+        <a href="socials.html">Socials</a>
+        <a class="shop-link" href="https://www.ebay.com/str/monumentvinylrecords" target="_blank" rel="noopener">Shop eBay</a>
+      </nav>
+    </div>
   </header>
 
-  <section class="about">
-    <h2>About Us</h2>
-    <p>
-      We specialize in rare, classic, and collectible vinyl records.
-      From rock and jazz to soul and blues, Monument Vinyl Records
-      brings authentic sound to collectors worldwide.
-    </p>
-  </section>
+  <main>
+    <!-- Hero -->
+    <section class="hero wrap">
+      <div class="hero-left">
+        <h1>Vinyl that moves you.</h1>
+        <p class="lead">Discover rare pressings, beloved classics, and collector finds — curated weekly.</p>
+        <form id="searchForm" class="search-form" onsubmit="onSearch(event)">
+          <input id="searchInput" placeholder="Search artist, album or catalog #" aria-label="Search" />
+          <button type="submit">Search</button>
+        </form>
+        <p class="small-note">Prefer browsing? Try these: <a href="#genres">Rock</a> · <a href="#genres">Jazz</a> · <a href="#genres">Soul</a></p>
+      </div>
+      <div class="hero-right">
+        <!-- decorative image, use your own or a placeholder -->
+        <img src="https://picsum.photos/seed/vinyl1/640/440" alt="stack of vinyl records" />
+      </div>
+    </section>
 
-  <footer>
-    <p>© 2025 Monument Vinyl Records</p>
+    <!-- Featured carousel -->
+    <section id="featured" class="wrap section">
+      <h2>Featured Picks</h2>
+      <div class="carousel" aria-roledescription="carousel">
+        <button class="carousel-btn prev" onclick="moveCarousel(-1)" aria-label="Previous">‹</button>
+        <div class="carousel-track" id="carouselTrack">
+          <!-- slides -->
+          <article class="slide">
+            <img src="https://picsum.photos/seed/feat1/400/400" alt="Featured album 1" />
+            <div class="slide-caption">
+              <strong>Blue Note Classics</strong>
+              <p>Vintage jazz reissues — sealed.</p>
+            </div>
+          </article>
+
+          <article class="slide">
+            <img src="https://picsum.photos/seed/feat2/400/400" alt="Featured album 2" />
+            <div class="slide-caption">
+              <strong>Rock Anthems</strong>
+              <p>Iconic albums, excellent condition.</p>
+            </div>
+          </article>
+
+          <article class="slide">
+            <img src="https://picsum.photos/seed/feat3/400/400" alt="Featured album 3" />
+            <div class="slide-caption">
+              <strong>Indie Picks</strong>
+              <p>Limited runs & colored vinyl.</p>
+            </div>
+          </article>
+        </div>
+        <button class="carousel-btn next" onclick="moveCarousel(1)" aria-label="Next">›</button>
+      </div>
+    </section>
+
+    <!-- Product grid -->
+    <section id="new" class="wrap section">
+      <div class="section-header">
+        <h2>New Arrivals</h2>
+        <p class="muted">Updated weekly — click any item to view on eBay.</p>
+      </div>
+
+      <div class="grid" id="productGrid">
+        <!-- sample product card (duplicate or replace with actual items) -->
+        <article class="card">
+          <img src="https://picsum.photos/seed/p1/400/400" alt="Album 1" />
+          <div class="card-body">
+            <h3>Electric Echoes — LP</h3>
+            <p class="meta">Reissue • VG+</p>
+            <a class="btn" href="https://www.ebay.com/str/monumentvinylrecords" target="_blank" rel="noopener">View on eBay</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="https://picsum.photos/seed/p2/400/400" alt="Album 2" />
+          <div class="card-body">
+            <h3>Night Moves — 1975</h3>
+            <p class="meta">Original pressing • VG</p>
+            <a class="btn" href="https://www.ebay.com/str/monumentvinylrecords" target="_blank" rel="noopener">View on eBay</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="https://picsum.photos/seed/p3/400/400" alt="Album 3" />
+          <div class="card-body">
+            <h3>Blue Note Collection</h3>
+            <p class="meta">Box set • New</p>
+            <a class="btn" href="https://www.ebay.com/str/monumentvinylrecords" target="_blank" rel="noopener">View on eBay</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="https://picsum.photos/seed/p4/400/400" alt="Album 4" />
+          <div class="card-body">
+            <h3>Funk Essentials — Vol.1</h3>
+            <p class="meta">Limited • NM</p>
+            <a class="btn" href="https://www.ebay.com/str/monumentvinylrecords" target="_blank" rel="noopener">View on eBay</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Genres quick links -->
+    <section id="genres" class="wrap section">
+      <h2>Browse by Genre</h2>
+      <div class="genres">
+        <a class="chip" href="#new">Rock</a>
+        <a class="chip" href="#new">Jazz</a>
+        <a class="chip" href="#new">Soul</a>
+        <a class="chip" href="#new">Electronic</a>
+        <a class="chip" href="#new">Soundtracks</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <div class="foot-col">
+        <h4>Monument Vinyl</h4>
+        <p>Curated vinyl since 2025 — shop our eBay store or follow us on social media.</p>
+      </div>
+
+      <div class="foot-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="socials.html">Social Feed</a></li>
+          <li><a href="https://www.ebay.com/str/monumentvinylrecords" target="_blank" rel="noopener">eBay Store</a></li>
+        </ul>
+      </div>
+
+      <div class="foot-col">
+        <h4>Follow</h4>
+        <div class="socials">
+          <a href="https://instagram.com/YOURHANDLE" target="_blank" rel="noopener">Instagram</a>
+          <a href="https://youtube.com/@YOURHANDLE" target="_blank" rel="noopener">YouTube</a>
+        </div>
+      </div>
+    </div>
+    <div class="copyright">© 2025 Monument Vinyl Records</div>
   </footer>
+
+<script src="script.js"></script>
 </body>
 </html>
